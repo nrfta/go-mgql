@@ -12,7 +12,7 @@ jobs:
     name: Draft Release
     steps:
       - uses: actions/checkout@v2
-        -
+
       - name: Draft Release
         uses: release-drafter/release-drafter@v5.15.0
         env:
