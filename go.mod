@@ -1,6 +1,6 @@
 module github.com/nrfta/go-mgql
 
-go 1.21
+go 1.25.0
 
 require (
 	github.com/99designs/gqlgen v0.17.41
@@ -15,6 +15,6 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/sosodev/duration v1.2.0 // indirect
-	golang.org/x/net v0.23.0 // indirect
-	golang.org/x/sys v0.18.0 // indirect
+	golang.org/x/net v0.55.0 // indirect
+	golang.org/x/sys v0.45.0 // indirect
 )
