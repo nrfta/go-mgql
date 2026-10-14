@@ -61,14 +61,14 @@ func (m *MGQL) Handler() http.HandlerFunc {
 		var params *graphql.RawParams
 		if err := jsonDecode(r.Body, &params); err != nil {
 			w.WriteHeader(http.StatusBadRequest)
-			writeJsonErrorf(w, "json body could not be decoded: "+err.Error())
+			writeJsonErrorf(w, "json body could not be decoded: %s", err.Error())
 			return
 		}
 
 		doc, err := parser.ParseQuery(&ast.Source{Input: params.Query})
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
-			writeJsonErrorf(w, "unable to parse query: "+err.Error())
+			writeJsonErrorf(w, "unable to parse query: %s", err.Error())
 			return
 		}
 
@@ -108,6 +108,6 @@ func (m *MGQL) Handler() http.HandlerFunc {
 			resolverFn(ctx)
 			return
 		}
-		writeJsonErrorf(w, "Mock ResponseResolver not found: "+operation.Name)
+		writeJsonErrorf(w, "Mock ResponseResolver not found: %s", operation.Name)
 	}
 }
